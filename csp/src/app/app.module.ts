@@ -21,4 +21,4 @@ import { TemplateModule } from './template/template.module';
   providers: [ClientesService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
