@@ -1,9 +1,9 @@
+import { Component, OnInit } from '@angular/core';
+
+import { ServicoPrestadoService } from '../../servico-prestado.service';
+import { ServicoPrestado } from '../servicoPrestado';
 import { ClientesService } from './../../clientes.service';
 import { Cliente } from './../../clientes/cliente';
-import { Component, OnInit } from '@angular/core';
-import { } from '../../clientes.service'
-import { ServicoPrestado } from '../servicoPrestado';
-import { ServicoPrestadoService } from '../../servico-prestado.service'
 
 @Component({
   selector: 'app-servico-prestado-form',

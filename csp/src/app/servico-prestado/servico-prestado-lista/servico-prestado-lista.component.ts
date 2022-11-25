@@ -13,6 +13,7 @@ export class ServicoPrestadoListaComponent implements OnInit {
   mes!: number;
   meses: number[];
   lista!: ServicoPrestadoBusca[];
+  message!: string | null;
 
   constructor(
     private service: ServicoPrestadoService
@@ -23,9 +24,17 @@ export class ServicoPrestadoListaComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  consultar() {
-    this.service.buscar(this.nome, this.mes)
-      .subscribe(response => this.lista = response);
+  consultar(){
+    this.service
+      .buscar(this.nome, this.mes)
+      .subscribe(response => {
+        this.lista = response;
+        if( this.lista.length <= 0 ){
+          this.message = "Nenhum Registro encontrado.";
+        }else{
+          this.message = null;
+        }
+      });
 
   }
 }
